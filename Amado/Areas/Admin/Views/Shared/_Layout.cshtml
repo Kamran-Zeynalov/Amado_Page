@@ -1,0 +1,213 @@
+﻿@* @inject Elegant_Lady.Services.LayoutService layoutService *@
+@* @{
+    User user = await layoutService.GetUserFullName();
+    List<Order> orders = layoutService.GetOrderItems();
+
+} *@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Amado Admin</title>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="~/img/core-img/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="~/admin/assets/icon/themify-icons/themify-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="~/admin/assets/icon/icofont/css/icofont.css">
+
+    <link rel="stylesheet" type="text/css" href="~/admin/assets/icon/simple-line-icons/css/simple-line-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="~/admin/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="~/admin/assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+
+    <!-- Weather css -->
+    <link href="~/admin/assets/css/svg-weather.css" rel="stylesheet">
+
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="~/admin/assets/css/main.css">
+
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="~/admin/assets/css/responsive.css">
+
+</head>
+
+<body class="sidebar-mini fixed">
+    <div class="loader-bg">
+        <div class="loader-bar">
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- Navbar-->
+        <header class="main-header-top hidden-print">
+            <a class="logo"><img class="img-fluid able-logo" style="width:25px;" src="~/img/core-img/logo.png" alt="Theme-logo">Amado </a>
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+                <!-- Navbar Right Menu-->
+                <div class="navbar-custom-menu f-right">
+                    <ul class="top-nav">
+                        <li class="dropdown notification-menu">
+                            <a href="#!" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-danger header-badge">12</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="not-head">Sizin <b class="text-primary">asd</b> Yeni sifarişiniz var.</li>
+                              @*   @foreach (var order in orders.Where(x => x.Status == null))
+                                {
+                                    <li class="bell-notification">
+                                        <a asp-area="Adminareas" asp-controller="Order" asp-action="Edit" asp-route-id="@order.Id" class="media">
+                                            <div class="media-body"><span class="block">@order.User.FullName - @order.TotalPrice <span>₼</span></span><span class="text-muted block-time"></span></div>
+                                        </a>
+                                    </li>
+                                } *@
+
+
+
+                            </ul>
+                        </li>
+                        <!-- window screen -->
+                        <li class="pc-rheader-submenu">
+                            <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+
+                        </li>
+                        <!-- User Menu-->
+                        <li class="dropdown">
+                            <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
+                               
+
+                            </a>
+                            <ul class="dropdown-menu settings-menu">
+                                <li><a asp-area="AdminAreas" asp-controller="Adminregister" asp-action="Register"><i class="icon-settings"></i> Yeni Admin Əlavə et</a></li>
+                                <li><a asp-area=" " asp-controller="Account" asp-action="Myinfo"><i class="icon-settings"></i> Şəxsi məlumatlar</a></li>
+                                <li><a asp-area=" " asp-controller="Home" asp-action="Index"><i class="icon-home"></i>Səhifəyə geri dön</a></li>
+                                <li class="p-0">
+                                    <div class="dropdown-divider m-0"></div>
+                                </li>
+                                <li><a asp-area=" " asp-controller="account" asp-action="LogOut"><i class="icon-logout"></i> Çıxış</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+        <!-- Side-Nav-->
+        <aside class="main-sidebar hidden-print ">
+            <section class="sidebar" id="sidebar-scroll">
+                <!-- Sidebar Menu-->
+                <ul class="sidebar-menu">
+                    <li class="nav-level">--- Statistika</li>
+                    <li class="active treeview">
+                        <a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Home" asp-action="Statistics">
+                            <i class="icon-speedometer"></i><span> Statistika</span>
+                        </a>
+                    </li>
+                    <li class="nav-level">--- Bütün modeller</li>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span>Modellər</span><i class="icon-arrow-down"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Category" asp-action="Index"><i class="icon-arrow-right"></i> Kateqoriyalar</a></li>
+                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Setting" asp-action="Index"><i class="icon-arrow-right"></i> Ümumi dəyişikliklər</a></li>
+                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Rules" asp-action="Index"><i class="icon-arrow-right"></i>Qaydalar</a></li>
+                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="About" asp-action="Index"><i class="icon-arrow-right"></i>Haqqımızda</a></li>
+                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="User" asp-action="Index"><i class="icon-arrow-right"></i>İstifadəçilər</a></li>
+                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Worker" asp-action="Index"><i class="icon-arrow-right"></i>İşçilər</a></li>
+                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Products" asp-action="Index"><i class="icon-arrow-right"></i>Məhsullar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span>Sifarişlər</span><i class="icon-arrow-down"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Order" asp-action="index"><i class="icon-arrow-right"></i>Sifarişlər</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-level"></li>
+                    <li class=" treeview">
+                        <a class="waves-effect waves-dark" asp-area=" " asp-controller="Home" asp-action="index">
+                            <i class="icon-home"></i><span> Əsas Səhifə</span>
+                        </a>
+                    </li>
+                    <li class=" treeview">
+                        <a class="waves-effect waves-dark" asp-area=" " asp-controller="account" asp-action="LogOut"><i class="icon-logout"></i><span>Çıxış</span></a>
+                    </li>
+                    <li class=" treeview">
+
+                        <a class="waves-effect waves-dark" asp-area="AdminAreas" asp-controller="Adminregister" asp-action="Register"><i class="icon-briefcase"></i><span>Yeni Admin Əlavə et</span></a>
+
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <!-- Sidebar chat start -->
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="~/admin/assets/plugins/Jquery/dist/jquery.min.js"></script>
+    <script src="~/admin/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/admin/assets/plugins/tether/dist/js/tether.min.js"></script>
+    <script src="~/admin/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+ @*    @RenderSection("Scripts",false)
+    @RenderSection("Script",false) *@
+    <script src="~/admin/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="~/admin/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+
+    <script src="~/admin/assets/plugins/classie/classie.js"></script>
+
+    <script src="~/admin/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+    <script src="~/admin/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+
+    <script src="~/admin/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="~/admin/assets/plugins/countdown/js/jquery.counterup.js"></script>
+
+    <script src="~/admin/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+
+    <!-- custom js -->
+    <script type="text/javascript" src="~/admin/assets/js/main.min.js"></script>
+    <script type="text/javascript" src="~/admin/assets/pages/dashboard.js"></script>
+    <script type="text/javascript" src="~/admin/assets/pages/elements.js"></script>
+    <script src="~/admin/assets/js/menu.min.js"></script>
+   
+    <script>
+        var $window = $(window);
+        var nav = $('.fixed-button');
+        $window.scroll(function () {
+            if ($window.scrollTop() >= 200) {
+                nav.addClass('active');
+            }
+            else {
+                nav.removeClass('active');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+
