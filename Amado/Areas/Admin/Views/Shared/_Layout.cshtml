@@ -50,7 +50,7 @@
     <div class="wrapper">
         <!-- Navbar-->
         <header class="main-header-top hidden-print">
-            <a class="logo"><img class="img-fluid able-logo" style="width:25px;" src="~/img/core-img/logo.png" alt="Theme-logo">Amado </a>
+            <a class="logo"><img class="img-fluid able-logo" style="width:100%;" src="~/img/core-img/logo.png" alt="Theme-logo">Amado </a>
             <nav class="navbar navbar-static-top">
                 <!-- Sidebar toggle button-->
                 <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
@@ -62,20 +62,6 @@
                                 <i class="icon-bell"></i>
                                 <span class="badge badge-danger header-badge">12</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="not-head">Sizin <b class="text-primary">asd</b> Yeni sifarişiniz var.</li>
-                              @*   @foreach (var order in orders.Where(x => x.Status == null))
-                                {
-                                    <li class="bell-notification">
-                                        <a asp-area="Adminareas" asp-controller="Order" asp-action="Edit" asp-route-id="@order.Id" class="media">
-                                            <div class="media-body"><span class="block">@order.User.FullName - @order.TotalPrice <span>₼</span></span><span class="text-muted block-time"></span></div>
-                                        </a>
-                                    </li>
-                                } *@
-
-
-
-                            </ul>
                         </li>
                         <!-- window screen -->
                         <li class="pc-rheader-submenu">
@@ -91,13 +77,11 @@
 
                             </a>
                             <ul class="dropdown-menu settings-menu">
-                                <li><a asp-area="AdminAreas" asp-controller="Adminregister" asp-action="Register"><i class="icon-settings"></i> Yeni Admin Əlavə et</a></li>
-                                <li><a asp-area=" " asp-controller="Account" asp-action="Myinfo"><i class="icon-settings"></i> Şəxsi məlumatlar</a></li>
-                                <li><a asp-area=" " asp-controller="Home" asp-action="Index"><i class="icon-home"></i>Səhifəyə geri dön</a></li>
+                                <li><a asp-controller="Home" asp-action="Index"><i class="icon-home"></i>Səhifəyə geri dön</a></li>
                                 <li class="p-0">
                                     <div class="dropdown-divider m-0"></div>
                                 </li>
-                                <li><a asp-area=" " asp-controller="account" asp-action="LogOut"><i class="icon-logout"></i> Çıxış</a></li>
+                                <li><a asp-area="Admin" asp-controller="account" asp-action="LogOut"><i class="icon-logout"></i> Çıxış</a></li>
 
                             </ul>
                         </li>
@@ -121,13 +105,10 @@
                     <li class="treeview">
                         <a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span>Modellər</span><i class="icon-arrow-down"></i></a>
                         <ul class="treeview-menu">
-                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Category" asp-action="Index"><i class="icon-arrow-right"></i> Kateqoriyalar</a></li>
-                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Setting" asp-action="Index"><i class="icon-arrow-right"></i> Ümumi dəyişikliklər</a></li>
-                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Rules" asp-action="Index"><i class="icon-arrow-right"></i>Qaydalar</a></li>
-                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="About" asp-action="Index"><i class="icon-arrow-right"></i>Haqqımızda</a></li>
-                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="User" asp-action="Index"><i class="icon-arrow-right"></i>İstifadəçilər</a></li>
-                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Worker" asp-action="Index"><i class="icon-arrow-right"></i>İşçilər</a></li>
-                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Products" asp-action="Index"><i class="icon-arrow-right"></i>Məhsullar</a></li>
+                            <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Category" asp-action="Index"><i class="icon-arrow-right"></i> Categories</a></li>
+                            <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Brand" asp-action="Index"><i class="icon-arrow-right"></i> Brands</a></li>
+                            <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Color" asp-action="Index"><i class="icon-arrow-right"></i> Colors</a></li>
+                          
                         </ul>
                     </li>
                     <li class="treeview">
@@ -143,12 +124,7 @@
                         </a>
                     </li>
                     <li class=" treeview">
-                        <a class="waves-effect waves-dark" asp-area=" " asp-controller="account" asp-action="LogOut"><i class="icon-logout"></i><span>Çıxış</span></a>
-                    </li>
-                    <li class=" treeview">
-
-                        <a class="waves-effect waves-dark" asp-area="AdminAreas" asp-controller="Adminregister" asp-action="Register"><i class="icon-briefcase"></i><span>Yeni Admin Əlavə et</span></a>
-
+                        <a class="waves-effect waves-dark" asp-area="Admin" asp-controller="account" asp-action="LogOut"><i class="icon-logout"></i><span>Çıxış</span></a>
                     </li>
                 </ul>
             </section>
@@ -172,8 +148,8 @@
     <script src="~/admin/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script src="~/admin/assets/plugins/tether/dist/js/tether.min.js"></script>
     <script src="~/admin/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
- @*    @RenderSection("Scripts",false)
-    @RenderSection("Script",false) *@
+    @RenderSection("Scripts",false)
+    @RenderSection("Script",false)
     <script src="~/admin/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
     <script src="~/admin/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
 

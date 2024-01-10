@@ -1,11 +1,10 @@
 ﻿using Amado.Entities;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace Amado.Data
 {
-    public class AmadoDbContext : DbContext
+    public class AmadoDbContext : IdentityDbContext<User>
     {
         public AmadoDbContext()
         {
