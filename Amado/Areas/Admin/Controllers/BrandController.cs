@@ -1,9 +1,12 @@
 ﻿using Amado.Data;
 using Amado.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Amado.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Authorize]
     public class BrandController : Controller
     {
         private readonly AmadoDbContext _context;

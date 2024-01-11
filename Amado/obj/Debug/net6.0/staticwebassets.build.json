@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ybN6MYP7LguZueqcK+QwqXiaECs/Cq02/T38LofdtGs=",
+  "Hash": "8vsYexz6cYMbSARE6aRdo71cEu+ZefFeyOYtU+mYQeg=",
   "Source": "Amado",
   "BasePath": "_content/Amado",
   "Mode": "Default",
@@ -1749,6 +1749,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\assets\\js\\common-pages.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\admin\\assets\\js\\ImageAdd.js",
+      "SourceId": "Amado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\",
+      "BasePath": "_content/Amado",
+      "RelativePath": "admin/assets/js/ImageAdd.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\assets\\js\\ImageAdd.js"
     },
     {
       "Identity": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\admin\\assets\\js\\main.js",

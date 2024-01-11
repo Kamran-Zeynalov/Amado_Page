@@ -401,6 +401,10 @@
       "PackagePath": "staticwebassets\\admin\\assets\\images\\widget\\user-block-5.png"
     },
     {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\admin\\assets\\js\\ImageAdd.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\js\\ImageAdd.js"
+    },
+    {
       "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\admin\\assets\\js\\common-pages.min.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\common-pages.min.js"
     },
