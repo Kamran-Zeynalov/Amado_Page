@@ -1,6 +1,7 @@
 using Amado.Data;
 using Amado.Entities;
 using Amado.Helpers;
+using Amado.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -26,6 +27,8 @@ namespace Amado
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireLowercase = false;
             }).AddEntityFrameworkStores<AmadoDbContext>();
+
+            builder.Services.AddSingleton<FileService>();
 
             var app = builder.Build();
 
