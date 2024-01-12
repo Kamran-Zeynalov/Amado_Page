@@ -67,11 +67,11 @@
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="product-details.html">Product</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+                    <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Shop" asp-action="Index">Shop</a></li>
+                    <li><a >Product</a></li>
+                    <li><a >Cart</a></li>
+                    <li><a >Checkout</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
@@ -185,6 +185,7 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    @RenderSection("Script",false)
 
 </body>
 

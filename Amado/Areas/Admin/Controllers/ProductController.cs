@@ -180,8 +180,11 @@ namespace Amado.Areas.Admin.Controllers
             {
                 foreach (var currentImageUrl in editedProduct.ImageUrl)
                 {
-                    _fileService.DeleteFile(currentImageUrl, Path.Combine("img/product-img", currentImageUrl));
-
+                    if (currentImageUrl == null)
+                    {
+                        _fileService.DeleteFile(currentImageUrl, Path.Combine("img/product-img", currentImageUrl));
+                        product.ProductImages.RemoveAll(pi => !currentImageUrl.Contains(pi.Image.Url));
+                    }
                 }
             }
             //var urlsToDelete = product.ProductImages
@@ -242,7 +245,7 @@ namespace Amado.Areas.Admin.Controllers
 
             _context.SaveChanges();
 
-            return Json(editedProduct);
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Details(int? id)
