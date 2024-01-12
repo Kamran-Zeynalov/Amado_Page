@@ -1,4 +1,4 @@
-﻿@model Amado.Entities.Product
+﻿@model ProductEditVM
 
 @{
     ViewData["Title"] = "Edit";
@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -27,6 +27,52 @@
                 <label asp-for="Desc" class="control-label"></label>
                 <input asp-for="Desc" class="form-control" />
                 <span asp-validation-for="Desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="3">Category</label>
+                <select asp-for="CategoryId" asp-items="@new SelectList(Model.Categories, nameof(Category.Id), nameof(Category.Name))" id="3" class="form-control">
+                    <option disabled selected>Choose category</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="4">Brand</label>
+                <select asp-for="BrandId" asp-items="@new SelectList(Model.Brands, nameof(Brand.Id), nameof(Brand.Name))" id="4" class="form-control">
+                    <option disabled selected>Choose Brand</option>
+                    <span asp-validation-for="BrandId" class="text-danger"></span>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="6">Color</label>
+                <select asp-for="ColorId" asp-items="@new SelectList(Model.Colors, nameof(Color.Id), nameof(Color.Name))" id="6" class="form-control">
+                    <option disabled selected>Choose Color</option>
+                </select>
+                <span asp-validation-for="ColorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="5">Type</label>
+                <input multiple asp-for="Images" type="file" class="form-control img-input" id="5">
+                <span asp-validation-for="Images" class="text-danger"></span>
+               
+                <div class="img-preview-container">
+                    @foreach (var imagePath in Model.ImageUrl)
+                    {
+                        <div class="img-preview">
+                        </div>
+                    }
+                </div>
+                @foreach (var imagePath in Model.ImageUrl)
+                {
+                    <div class="img-delete">
+                        <img src="~/img/product-img/@imagePath" style="width:200px" />
+                        @if (imagePath is not null)
+                        {
+                            <a class="delete-btn btn btn-danger"> Delete Image</a>
+                        }
+                    </div>
+                }
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -46,4 +92,5 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/admin/assets/js/ImageDelete.js"></script>
 }

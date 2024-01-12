@@ -21,6 +21,7 @@ namespace Amado.Data
         public DbSet<Image> Images { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<Country> Countries { get; set; }
         public DbSet<Category> Category { get; set; }
 
 

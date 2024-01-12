@@ -405,6 +405,10 @@
       "PackagePath": "staticwebassets\\admin\\assets\\js\\ImageAdd.js"
     },
     {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\admin\\assets\\js\\ImageDelete.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\js\\ImageDelete.js"
+    },
+    {
       "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\admin\\assets\\js\\common-pages.min.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\common-pages.min.js"
     },
@@ -4071,6 +4075,42 @@
     {
       "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\core-img\\search.png",
       "PackagePath": "staticwebassets\\img\\core-img\\search.png"
+    },
+    {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Banners (1).pnga6f8f0ab-6696-4702-af89-99179ff904c9.png",
+      "PackagePath": "staticwebassets\\img\\product-img\\Banners (1).pnga6f8f0ab-6696-4702-af89-99179ff904c9.png"
+    },
+    {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Banners (2).png755c0437-e718-4e3f-90e2-2de372a2da44.png",
+      "PackagePath": "staticwebassets\\img\\product-img\\Banners (2).png755c0437-e718-4e3f-90e2-2de372a2da44.png"
+    },
+    {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Banners.pngd23315a8-00e4-4ab7-b66f-edcafaa76279.png",
+      "PackagePath": "staticwebassets\\img\\product-img\\Banners.pngd23315a8-00e4-4ab7-b66f-edcafaa76279.png"
+    },
+    {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Banners1.jpg65327d94-761e-457c-8080-eef59a71f76a.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\Banners1.jpg65327d94-761e-457c-8080-eef59a71f76a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Frame 746.png5390af86-889b-40c4-8268-9e2dc5389c8f.png",
+      "PackagePath": "staticwebassets\\img\\product-img\\Frame 746.png5390af86-889b-40c4-8268-9e2dc5389c8f.png"
+    },
+    {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\People applying product 5.png633fd008-72ab-4212-998d-b75018627777.png",
+      "PackagePath": "staticwebassets\\img\\product-img\\People applying product 5.png633fd008-72ab-4212-998d-b75018627777.png"
+    },
+    {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Union (6).pngf5ab98a7-83b6-45aa-a909-2ed414e4051d.png",
+      "PackagePath": "staticwebassets\\img\\product-img\\Union (6).pngf5ab98a7-83b6-45aa-a909-2ed414e4051d.png"
+    },
+    {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Union (7).png8b6162f1-b5d9-44aa-aecb-34ebb0a7abfe.png",
+      "PackagePath": "staticwebassets\\img\\product-img\\Union (7).png8b6162f1-b5d9-44aa-aecb-34ebb0a7abfe.png"
+    },
+    {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Union (7).pngba005e86-ace8-4b9b-a4fd-5ac4a63d780f.png",
+      "PackagePath": "staticwebassets\\img\\product-img\\Union (7).pngba005e86-ace8-4b9b-a4fd-5ac4a63d780f.png"
     },
     {
       "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\pro-big-1.jpg",
