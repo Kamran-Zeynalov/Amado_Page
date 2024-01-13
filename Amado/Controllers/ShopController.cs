@@ -15,7 +15,7 @@ namespace Amado.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index(int titleid, int page, string order = "desc")
+        public async Task<IActionResult> Index(int page, string order = "desc")
         {
             if (page <= 0) page = 1;
 
@@ -50,14 +50,17 @@ namespace Amado.Controllers
             return View(model);
         }
 
-        public IActionResult Sorted(int titleid, int page = 1)
+        public IActionResult Sorted(int titleid, int brandid, int colorid, int page = 1)
         {
             IQueryable<Product> allproductss = _context.Products
                 .Include(p => p.ProductImages).ThenInclude(pi => pi.Image)
-                .Include(p => p.Category);
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .Include(p => p.ProductColors).ThenInclude(pc => pc.Color);
+
             ViewBag.TotalPage = Math.Ceiling((double)_context.Products.Count() / 8);
             ViewBag.CurrentPage = page;
-            if (titleid == 0)
+            if (titleid == 0 && brandid == 0 && colorid == 0)
             {
                 List<Product> products = allproductss.ToList();
                 var pro = new IndexVM
@@ -65,13 +68,18 @@ namespace Amado.Controllers
                     Products = products,
                 };
                 return PartialView("_ShopPartial", pro);
-
             }
 
-            List<Product> sortvacans = allproductss.OrderBy(x => x.Id).Where(x => x.CategoryId == titleid).Skip((page - 1) * 8).ToList();
+            List<Product> sortedProducts = allproductss
+                   .Where(x => (titleid == 0 || x.CategoryId == titleid)
+                            && (brandid == 0 || x.BrandId == brandid)
+                            && (colorid == 0 || x.ProductColors.FirstOrDefault().ColorId == colorid))
+                   .OrderBy(x => x.Id)
+                   .Skip((page - 1) * 8)
+                   .ToList(); 
             var model = new IndexVM
             {
-                Products = sortvacans,
+                Products = sortedProducts,
             };
             return PartialView("_ShopPartial", model);
         }
