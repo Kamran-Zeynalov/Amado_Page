@@ -129,9 +129,6 @@ namespace Amado.Areas.Admin.Controllers
             List<Brand> brands = _context.Brands.ToList();
             List<Color> colors = _context.Colors.ToList();
 
-            List<string> currentImageUrls = product.ProductImages?.Select(pi => pi?.Image.Url)
-                .Where(url => url != null).ToList() ?? new List<string>();
-
             ProductEditVM updatedModel = new()
             {
                 Id = product.Id,
@@ -145,10 +142,9 @@ namespace Amado.Areas.Admin.Controllers
                 Brands = brands,
                 Colors = colors,
                 ColorId = product.ProductColors.FirstOrDefault()?.ColorId,
-                ImageUrl = currentImageUrls,
                 AllImages = product.ProductImages?.Select(p => new Image
                 {
-                    Id = p.ImageId,
+                    Id = p.Image.Id,
                     Url = p.Image.Url
                 }).ToList() ?? new List<Image>()
             };
@@ -171,73 +167,34 @@ namespace Amado.Areas.Admin.Controllers
                 return View(editedProduct);
             }
 
-
             Product product = _context.Products
+                .Include(x => x.ProductImages).ThenInclude(x => x.Image)
                 .Include(p => p.Category).Include(p => p.Brand)
                 .Include(x => x.ProductColors).ThenInclude(x => x.Color)
-                .Include(x => x.ProductImages).ThenInclude(x => x.Image)
                 .FirstOrDefault(p => p.Id == editedProduct.Id);
 
             if (product is null) return NotFound();
 
-            List<string> currentImageUrls = product.ProductImages?.Select(pi => pi?.Image.Url)
-              .Where(url => url != null).ToList() ?? new List<string>();
 
-            editedProduct = new()
+
+            if (editedProduct.DeletedImageIds != null && editedProduct.DeletedImageIds.Any())
             {
-                Id = product.Id,
-                Name = product.Name,
-                Price = product.Price,
-                Desc = product.Desc,
-                InStock = product.InStock,
-                CategoryId = product.CategoryId,
-                BrandId = product.BrandId,
-                ColorId = product.ProductColors.FirstOrDefault()?.ColorId,
-                ImageUrl = currentImageUrls,
-                AllImages = product.ProductImages?.Select(p => new Image
+                foreach (var deletedImageId in editedProduct.DeletedImageIds)
                 {
-                    Id = p.ImageId,
-                    Url = p.Image.Url
-                }).ToList()
-            };
+                    Image imageToDelete = _context.Images.FirstOrDefault(i => i.Id == deletedImageId);
+                    if (imageToDelete != null)
+                    {
+                        var imagePath = Path.Combine("img", "product-img", imageToDelete.Url);
+                        _fileService.DeleteFile(imageToDelete.Url, imagePath);
 
-            IEnumerable<string> removables = product.ProductImages.Where(p => !editedProduct.ImagesId.Contains(p.Id)).Select(i => i.Image.Url).AsEnumerable();
-            var imagefolderPath = Path.Combine("img", "product-img");
+                        _context.Images.Remove(imageToDelete);
+                    }
+                }
 
-
-            foreach (string removable in removables)
-            {
-                _fileService.DeleteFile(removable, imagefolderPath);
             }
-            product.ProductImages.RemoveAll(p => !editedProduct.ImagesId.Contains(p.Id));
-
-
-            //var urlsToDelete = product.ProductImages
-            //.Select(pi => pi.Image.Url)
-            //.ToList();
-            //foreach (var productImage in product.ProductImages)
-            //{
-            //    var imageUrl = productImage.Image.Url;
-
-            //    if (!string.IsNullOrEmpty(imageUrl) && urlsToDelete.Contains(imageUrl))
-            //    {
-            //        _fileService.DeleteFile(imageUrl, Path.Combine("img", "product-img"));
-            //        productImage.Image.Url = null;
-            //    }
-            //}
-
-            ////product.ProductImages.RemoveAll(pi => string.IsNullOrEmpty(pi.Image.Url));
 
             if (editedProduct.Images != null)
             {
-                //if (editedProduct.ImageUrl == null)
-                //{
-                //    foreach (var currentImageUrl in product.ProductImages.Select(pi => pi.Image.Url))
-                //    {
-                //        _fileService.DeleteFile(currentImageUrl, Path.Combine("img", "product-img"));
-                //    }
-                //    product.ProductImages.RemoveAll(pi => !editedProduct.ImageUrl.Contains(pi.Image.Url));
-                //}
                 var newImageUrls = _fileService.AddFile(editedProduct.Images, Path.Combine("img", "product-img"));
                 List<ProductImage> newImg = newImageUrls.Select(imageUrl => new ProductImage
                 {
@@ -250,12 +207,11 @@ namespace Amado.Areas.Admin.Controllers
                 product.ProductImages.AddRange(newImg);
             }
 
-
             var fCategory = _context.Category.FirstOrDefault(x => x.Id == editedProduct.CategoryId);
             var fBrand = _context.Brands.FirstOrDefault(x => x.Id == editedProduct.BrandId);
             var fColor = _context.Colors.FirstOrDefault(x => x.Id == editedProduct.ColorId);
             product.Name = editedProduct.Name;
-            product.Price = (decimal)editedProduct.Price;
+            product.Price = editedProduct.Price;
             product.Desc = editedProduct.Desc;
             product.InStock = editedProduct.InStock;
             product.CategoryId = editedProduct.CategoryId;

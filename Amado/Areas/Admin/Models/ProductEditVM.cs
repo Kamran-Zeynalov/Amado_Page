@@ -22,7 +22,10 @@ namespace Amado.Areas.Admin.Models
         public List<Image>? AllImages { get; set; }
         [NotMapped]
         public List<IFormFile>? Images { get; set; }
-        public List<string>? ImageUrl { get; set; }
+
+        [NotMapped]
+        public List<int>? DeletedImageIds { get; set; }
+        //public List<string>? ImageUrl { get; set; }
 
     }
 }

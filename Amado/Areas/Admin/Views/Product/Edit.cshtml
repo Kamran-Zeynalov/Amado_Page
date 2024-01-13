@@ -58,16 +58,17 @@
                 <span asp-validation-for="Images" class="text-danger"></span>
                
                 <div class="img-preview-container">
-                    @foreach (var imagePath in Model.ImageUrl)
+                    @for (int i = 0; i < Model.AllImages.Count; i++)
                     {
+                        var imagePath = Model.AllImages[i];
                         <div class="img-preview">
-                            <img src="~/img/product-img/@imagePath" style="width:200px" />
-                            @if (imagePath is not null)
+                            <img src="~/img/product-img/@imagePath.Url" style="width:200px" />
+                            @if (imagePath != null)
                             {
-                                <a class="delete-btn btn btn-danger"> Delete Image</a>
+                                <a href="#" class="delete-btn btn btn-danger" data-imageid="@imagePath.Id">Delete Image</a>
                             }
                         </div>
-                        @* <input type="text" name="ImagesId" value="@imagePath.Id" /> *@
+                        <input type="hidden" name="ImagesId" value="@imagePath.Id" />
                     }
                 </div>
             </div>
@@ -89,5 +90,18 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function () {
+            $('.delete-btn').on('click', function () {
+                var imageId = $(this).data('imageid');
+                $('<input>').attr({
+                    type: 'hidden',
+                    name: 'DeletedImageIds',
+                    value: imageId
+                }).appendTo('form');
+                $(this).closest('.img-preview').remove();
+            });
+        });
+    </script>
     <script src="~/admin/assets/js/ImageDelete.js"></script>
 }
