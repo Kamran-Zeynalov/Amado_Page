@@ -44,10 +44,44 @@ namespace Amado.Controllers
 
             var model = new IndexVM
             {
-                Products = pagedProducts,
+                Products = pagedProducts
+                .Skip((page - 1) * productsPerPage)
+                .Take(3)
+                .ToList(),
+                TotalPageCount = totalPageCount,
+                CurrentPage = page,
             };
 
             return View(model);
+        }
+
+        public IActionResult Filter(int page, string order = "desc")
+        {
+            if (page <= 0) page = 1;
+
+            int productsPerPage = 3;
+            var productCount = _context.Products.Count();
+
+            int totalPageCount = (int)Math.Ceiling(((decimal)productCount / productsPerPage));
+
+            var products = order switch
+            {
+                "desc" => _context.Products.OrderByDescending(x => x.Id),
+                "asc" => _context.Products.OrderBy(x => x.Id),
+                _ => _context.Products.OrderByDescending(x => x.Id)
+            };
+
+            var model = new IndexVM
+            {
+                Products = products
+                .Skip((page - 1) * productsPerPage)
+                .Take(productsPerPage)
+                .ToList(),
+                TotalPageCount = totalPageCount,
+                CurrentPage = page
+            };
+
+                return PartialView("_ShopPartial", model);
         }
 
         public IActionResult Sorted(int titleid, int brandid, int colorid, int page = 1)

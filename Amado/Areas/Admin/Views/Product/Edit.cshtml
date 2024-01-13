@@ -13,6 +13,7 @@
         <form asp-action="Edit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+          
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -53,7 +54,7 @@
             </div>
             <div class="form-group">
                 <label for="5">Type</label>
-                <input multiple style="width:200px" asp-for="Images" type="file" class="form-control img-input" id="5">
+                <input multiple asp-for="Images" type="file" class="form-control img-input" id="5">
                 <span asp-validation-for="Images" class="text-danger"></span>
                
                 <div class="img-preview-container">
@@ -66,6 +67,7 @@
                                 <a class="delete-btn btn btn-danger"> Delete Image</a>
                             }
                         </div>
+                        @* <input type="text" name="ImagesId" value="@imagePath.Id" /> *@
                     }
                 </div>
             </div>
