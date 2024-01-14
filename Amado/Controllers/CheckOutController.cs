@@ -16,7 +16,14 @@ namespace Amado.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            CheckOut check = _context.CheckOuts.FirstOrDefault();
+            List<Country> countries = _context.Countries.AsNoTracking().ToList();
+            check = new()
+            {
+                Countries = countries,
+            };
+
+            return View(check);
         }
 
         [HttpPost]
@@ -30,7 +37,7 @@ namespace Amado.Controllers
                     ModelState.AddModelError("", message);
                 }
 
-                return View();
+                return NotFound();
             }
 
             bool isDuplicated = _context.CheckOuts
@@ -44,13 +51,12 @@ namespace Amado.Controllers
                 return View();
             }
 
-            newCheck = new()
-            {
-                Countries = countries,
-            };
+            newCheck.Countries = countries;
+
+
             _context.CheckOuts.Add(newCheck);
             _context.SaveChanges();
-            return View();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

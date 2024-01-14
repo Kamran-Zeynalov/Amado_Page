@@ -251,6 +251,7 @@
 </style>
 <div class="table-responsive-vertical shadow-z-1">
     <!-- Table starts here -->
+    <h1 style="width:100%; margin:10px 0 40px;text-align:center; font-style:italic; font-size:30px;">Subscribes</h1>
     <table id="table" class="table table-hover table-mc-light-blue">
         <thead>
             <tr>
@@ -270,16 +271,16 @@
             @foreach (CheckOut info in Model)
             {
                 <tr>
-                    <td>1</td>
-                    <td>Material Design Color Palette</td>
-                    <td>agasf</td>
-                    <td>Completed</td>
-                    <td>1</td>
-                    <td>Material Design Color Palette</td>
-                    <td>agasf</td>
-                    <td>Completed</td>
-                    <td>1</td>
-                    <td>Material Design Color Palette</td>
+                    <td>@info.Name</td>
+                    <td>@info.Surname</td>
+                    <td>@info.Company</td>
+                    <td>@info.Email</td>
+                    <td>@info.Country.Name</td>
+                    <td>@info.Address</td>
+                    <td>@info.Town</td>
+                    <td>@info.ZipCode</td>
+                    <td>@info.PhoneNum</td>
+                    <td>@info.Comment</td>
                 </tr>
             }
      

@@ -21,7 +21,7 @@ namespace Amado.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            List<CheckOut> checkOuts = _context.CheckOuts.ToList();
+            List<CheckOut> checkOuts = _context.CheckOuts.Include(c => c.Country).ToList();
             return View(checkOuts);
         }
 

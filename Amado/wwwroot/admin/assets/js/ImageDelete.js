@@ -30,3 +30,15 @@ deleteButtons.forEach((deleteBtn) => {
         deleteBtn.remove();
     });
 });
+
+$(document).ready(function () {
+    $('.delete-btn').on('click', function () {
+        var imageId = $(this).data('imageid');
+        $('<input>').attr({
+            type: 'hidden',
+            name: 'DeletedImageIds',
+            value: imageId
+        }).appendTo('form');
+        $(this).closest('.img-preview').remove();
+    });
+});

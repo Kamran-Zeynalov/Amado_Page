@@ -20,7 +20,6 @@
 </head>
 
 <body>
-    <!-- Search Wrapper Area Start -->
     <div class="search-wrapper section-padding-100">
         <div class="search-close">
             <i class="fa fa-close" aria-hidden="true"></i>
@@ -30,25 +29,22 @@
                 <div class="col-12">
                     <div class="search-content">
                         <form action="#" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                            <input class="search-input" type="search" name="search" id="search" placeholder="Type your keyword...">
                             <button type="submit"><img src="~/img/core-img/search.png" alt=""></button>
                         </form>
+                        <div class="search-result">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Search Wrapper Area End -->
-    <!-- ##### Main Content Wrapper Start ##### -->
     <div class="main-content-wrapper d-flex clearfix">
 
-        <!-- Mobile Nav (max width 767px)-->
         <div class="mobile-nav">
-            <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="index.html"><img src="~/img/core-img/logo.png" alt=""></a>
+                <a asp-controller="Home" asp-action="Index"><img src="~/img/core-img/logo.png" alt=""></a>
             </div>
-            <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
                 <span></span><span></span><span></span>
             </div>
@@ -62,15 +58,14 @@
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="index.html"><img src="~/img/core-img/logo.png" alt=""></a>
+                <a asp-controller="Home" asp-action="Index"><img src="~/img/core-img/logo.png" alt=""></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
                     <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="Shop" asp-action="Index">Shop</a></li>
-                    <li><a asp-controller="Shop" asp-action="Detail">Product</a></li>
-                    <li><a>Cart</a></li>
+                    <li><a asp-controller="Cart" asp-action="Index">Cart</a></li>
                     <li><a asp-controller="CheckOut" asp-action="Index">Checkout</a></li>
                 </ul>
             </nav>
@@ -185,6 +180,7 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script src="js/Search.js"></script>
     @RenderSection("Script",false)
 
 </body>

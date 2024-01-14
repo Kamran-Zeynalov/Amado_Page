@@ -244,5 +244,47 @@ namespace Amado.Areas.Admin.Controllers
             ViewBag.Color = product.ProductColors?.FirstOrDefault()?.Color?.Value;
             return View(product);
         }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id is null) return BadRequest();
+            Product? product = _context.Products.Include(x => x.Category)
+                .Include(p => p.Brand)
+                .Include(p => p.ProductImages).ThenInclude(pi => pi.Image)
+                .Include(p => p.ProductColors).ThenInclude(pi => pi.Color)
+                .FirstOrDefault(x => x.Id == id);
+
+            if (product is null) return NotFound();
+            ViewBag.Color = product.ProductColors?.FirstOrDefault()?.Color?.Value;
+            return View(product);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var productToDelete = _context.Products
+                .Include(p => p.ProductImages)
+                .ThenInclude(pi => pi.Image)
+                .FirstOrDefault(p => p.Id == id);
+
+            if (productToDelete is null) return NotFound();
+
+            if (productToDelete.ProductImages != null)
+            {
+                foreach (var productImage in productToDelete.ProductImages)
+                {
+                    if (productImage.Image != null)
+                    {
+                        _fileService.DeleteFile(productImage.Image.Url, Path.Combine("img", "product-img"));
+                    }
+                }
+            }
+
+            _context.Products.Remove(productToDelete);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

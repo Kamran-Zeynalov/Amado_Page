@@ -25,7 +25,6 @@ namespace Amado.Areas.Admin.Models
 
         [NotMapped]
         public List<int>? DeletedImageIds { get; set; }
-        //public List<string>? ImageUrl { get; set; }
 
     }
 }

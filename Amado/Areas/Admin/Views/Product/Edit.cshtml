@@ -90,18 +90,5 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script>
-        $(document).ready(function () {
-            $('.delete-btn').on('click', function () {
-                var imageId = $(this).data('imageid');
-                $('<input>').attr({
-                    type: 'hidden',
-                    name: 'DeletedImageIds',
-                    value: imageId
-                }).appendTo('form');
-                $(this).closest('.img-preview').remove();
-            });
-        });
-    </script>
     <script src="~/admin/assets/js/ImageDelete.js"></script>
 }

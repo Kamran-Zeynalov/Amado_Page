@@ -15,11 +15,11 @@ namespace Amado.Entities
         public string PhoneNum { get; set; } = null!;
         public string Comment { get; set; } = null!;
         public int CountryId { get; set; }
-        public Country Country { get; set; }
+        public Country? Country { get; set; }
 
 
         [NotMapped]
-        public List<Country> Countries { get; set; }
+        public List<Country>? Countries { get; set; }
 
     }
 }

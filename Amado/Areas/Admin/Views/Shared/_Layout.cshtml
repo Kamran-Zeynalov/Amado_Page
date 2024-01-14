@@ -56,13 +56,7 @@
                 <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
                 <!-- Navbar Right Menu-->
                 <div class="navbar-custom-menu f-right">
-                    <ul class="top-nav">
-                        <li class="dropdown notification-menu">
-                            <a href="#!" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-                                <i class="icon-bell"></i>
-                                <span class="badge badge-danger header-badge">12</span>
-                            </a>
-                        </li>
+                    <ul class="top-nav">    
                         <!-- window screen -->
                         <li class="pc-rheader-submenu">
                             <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
@@ -94,28 +88,18 @@
         <aside class="main-sidebar hidden-print ">
             <section class="sidebar" id="sidebar-scroll">
                 <!-- Sidebar Menu-->
-                <ul class="sidebar-menu">
-                    <li class="nav-level">--- Statistika</li>
-                    <li class="active treeview">
-                        <a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Home" asp-action="Statistics">
-                            <i class="icon-speedometer"></i><span> Statistika</span>
-                        </a>
-                    </li>
+                <ul class="sidebar-menu" style="margin-top:30px;">
+                   
                     <li class="nav-level">--- Bütün modeller</li>
                     <li class="treeview">
                         <a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span>Modellər</span><i class="icon-arrow-down"></i></a>
                         <ul class="treeview-menu">
+                            <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="icon-arrow-right"></i> CheckOuts</a></li>
                             <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Product" asp-action="Index"><i class="icon-arrow-right"></i> Products</a></li>
                             <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Category" asp-action="Index"><i class="icon-arrow-right"></i> Categories</a></li>
                             <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Brand" asp-action="Index"><i class="icon-arrow-right"></i> Brands</a></li>
                             <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Color" asp-action="Index"><i class="icon-arrow-right"></i> Colors</a></li>
                           
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span>Sifarişlər</span><i class="icon-arrow-down"></i></a>
-                        <ul class="treeview-menu">
-                            <li><a class="waves-effect waves-dark" asp-area="Adminareas" asp-controller="Order" asp-action="index"><i class="icon-arrow-right"></i>Sifarişlər</a></li>
                         </ul>
                     </li>
                     <li class="nav-level"></li>
