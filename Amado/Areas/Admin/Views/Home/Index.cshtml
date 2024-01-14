@@ -1,1 +1,288 @@
-﻿
+﻿@model List<CheckOut>
+@{
+    ViewBag.Title = "Admin Home";
+}
+<style>
+
+    // Baseline styles
+    .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 2rem;
+        > thead, > tbody, > tfoot
+
+    {
+        > tr
+
+    {
+        .transition(all .3s ease);
+        > th, > td
+
+    {
+        text-align: left;
+        vertical-align: top;
+        border-top: 0;
+        .transition(all .3s ease);
+    }
+
+    }
+    }
+
+    > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 1px solid rgba(0,0,0,.12);
+    }
+
+    > caption + thead,
+    > colgroup + thead,
+    > thead:first-child {
+        > tr:first-child
+
+    {
+        > th, > td
+
+    {
+        border-top: 0;
+    }
+
+    }
+    }
+
+    > tbody + tbody {
+        border-top: 1px solid rgba(0,0,0,.12);
+    }
+
+    // Nesting
+    .table {
+    }
+
+    // Remove border
+    .no-border {
+        border: 0;
+    }
+
+    }
+
+    // Condensed table w/ half padding
+    .table-condensed {
+        > thead, > tbody, > tfoot
+
+    {
+        > tr
+
+    {
+        > th, > td
+
+    {
+    }
+
+    }
+    }
+    }
+
+
+    // Bordered version
+    //
+    // Add horizontal borders between columns.
+    .table-bordered {
+        border: 0;
+        > thead, > tbody, > tfoot
+
+    {
+        > tr
+
+    {
+        > th, > td
+
+    {
+        border: 0;
+    }
+
+    }
+    }
+
+    > thead > tr {
+        > th, > td
+
+    {
+        border-bottom-width: 2px;
+    }
+
+    }
+    }
+
+
+    // Zebra-striping
+    //
+    // Default zebra-stripe styles (alternating gray and transparent backgrounds)
+    .table-striped {
+        > tbody > tr:nth-child(odd)
+
+    {
+        > td, > th
+
+    {
+    }
+
+    }
+    }
+
+    // Hover effect
+    //
+    .table-hover {
+        > tbody > tr:hover
+
+    {
+        > td, > th
+
+    {
+    }
+
+    }
+    }
+
+    // Responsive tables (vertical)
+    //
+    // Wrap your tables in `.table-responsive-vertical` and we'll make them mobile friendly
+    // by vertical table-cell display. Only applies <768px. Everything above that will display normally.
+    // For correct display you must add 'data-title' to each 'td'
+    .table-responsive-vertical {
+
+    {
+        // Tighten up spacing > .table
+
+    {
+        margin-bottom: 0;
+        background-color: transparent;
+        > thead, > tfoot
+
+    {
+        display: none;
+    }
+
+    > tbody {
+        display: block;
+        > tr
+
+    {
+        display: block;
+        border-radius: 2px;
+        > td
+
+    {
+        display: block;
+        vertical-align: middle;
+        text-align: right;
+    }
+
+    > td[data-title]:before {
+        content: attr(data-title);
+        float: left;
+        font-size: inherit;
+    }
+
+    }
+    }
+    }
+
+    // Special overrides for shadows
+    &.shadow-z-1 {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        > .table > tbody > tr
+
+    {
+        border: none;
+        .shadow-z-1();
+    }
+
+    }
+
+    // Special overrides for the bordered tables > .table-bordered {
+        border: 0;
+        // Nuke the appropriate borders so that the parent can handle them > tbody
+
+    {
+        > tr
+
+    {
+        > td
+
+    {
+        border: 0;
+    }
+
+    > td:last-child {
+        border-bottom: 0;
+    }
+
+    }
+    }
+    }
+
+    // Special overrides for the striped tables > .table-striped {
+        > tbody > tr > td, > tbody > tr:nth-child(odd)
+
+    {
+    }
+
+    > tbody > tr > td:nth-child(odd) {
+    }
+
+    }
+
+    // Special overrides for hover tables > .table-hover {
+        > tbody
+
+    {
+        > tr:hover > td, > tr:hover
+
+    {
+    }
+
+    > tr > td:hover {
+    }
+
+    }
+    }
+    }
+    }
+</style>
+<div class="table-responsive-vertical shadow-z-1">
+    <!-- Table starts here -->
+    <table id="table" class="table table-hover table-mc-light-blue">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>Address</th>
+                <th>Town</th>
+                <th>ZipCode</th>
+                <th>Phone</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CheckOut info in Model)
+            {
+                <tr>
+                    <td>1</td>
+                    <td>Material Design Color Palette</td>
+                    <td>agasf</td>
+                    <td>Completed</td>
+                    <td>1</td>
+                    <td>Material Design Color Palette</td>
+                    <td>agasf</td>
+                    <td>Completed</td>
+                    <td>1</td>
+                    <td>Material Design Color Palette</td>
+                </tr>
+            }
+     
+        </tbody>
+    </table>
+</div>

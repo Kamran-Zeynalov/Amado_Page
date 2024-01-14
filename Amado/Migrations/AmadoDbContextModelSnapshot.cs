@@ -54,6 +54,60 @@ namespace Amado.Migrations
                     b.ToTable("Category");
                 });
 
+            modelBuilder.Entity("Amado.Entities.CheckOut", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNum")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Town")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.ToTable("CheckOuts");
+                });
+
             modelBuilder.Entity("Amado.Entities.Color", b =>
                 {
                     b.Property<int>("Id")
@@ -191,6 +245,23 @@ namespace Amado.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("Amado.Entities.Subscribe", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Subscribes");
                 });
 
             modelBuilder.Entity("Amado.Entities.User", b =>
@@ -399,6 +470,17 @@ namespace Amado.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Amado.Entities.CheckOut", b =>
+                {
+                    b.HasOne("Amado.Entities.Country", "Country")
+                        .WithMany("CheckOuts")
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
             modelBuilder.Entity("Amado.Entities.Product", b =>
                 {
                     b.HasOne("Amado.Entities.Brand", "Brand")
@@ -520,6 +602,11 @@ namespace Amado.Migrations
             modelBuilder.Entity("Amado.Entities.Color", b =>
                 {
                     b.Navigation("PorductColors");
+                });
+
+            modelBuilder.Entity("Amado.Entities.Country", b =>
+                {
+                    b.Navigation("CheckOuts");
                 });
 
             modelBuilder.Entity("Amado.Entities.Image", b =>

@@ -1,16 +1,29 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Amado.Data;
+using Amado.Entities;
+using Amado.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Amado.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
+    [Authorize]
     public class HomeController : Controller
     {
-        [Authorize]
+        private readonly AmadoDbContext _context;
+
+        public HomeController(AmadoDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            List<CheckOut> checkOuts = _context.CheckOuts.ToList();
+            return View(checkOuts);
         }
+
     }
 }

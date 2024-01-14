@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Title  -->
-    <title>Amado - Furniture Ecommerce Template | Home</title>
+    <title>@ViewBag.Page</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="~/img/core-img/favicon.ico"> 
@@ -69,9 +69,9 @@
                 <ul>
                     <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="Shop" asp-action="Index">Shop</a></li>
-                    <li><a >Product</a></li>
-                    <li><a >Cart</a></li>
-                    <li><a >Checkout</a></li>
+                    <li><a asp-controller="Shop" asp-action="Detail">Product</a></li>
+                    <li><a>Cart</a></li>
+                    <li><a asp-controller="CheckOut" asp-action="Index">Checkout</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->

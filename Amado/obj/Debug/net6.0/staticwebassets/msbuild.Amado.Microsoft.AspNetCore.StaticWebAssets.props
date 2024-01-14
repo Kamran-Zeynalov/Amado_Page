@@ -16336,6 +16336,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\Banners (1).pngac1f401d-5caa-4dc4-a2c4-936b001f6f7b.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\Banners (2).png48512bc9-aeba-487d-abd3-950d30b35ee6.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Amado</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Amado</BasePath>
+      <RelativePath>img/product-img/Banners (2).png48512bc9-aeba-487d-abd3-950d30b35ee6.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\Banners (2).png48512bc9-aeba-487d-abd3-950d30b35ee6.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\Banners (2).png99ff6a09-97db-4223-bb6f-d0d2d8408340.png))">
       <SourceType>Package</SourceType>
       <SourceId>Amado</SourceId>
@@ -16432,6 +16448,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\Banners.pngb0105ea3-4b85-4d7d-969b-a59704c881a2.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\Frame 746.png044c980b-bbc0-424c-966c-53ef9fefaa5e.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Amado</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Amado</BasePath>
+      <RelativePath>img/product-img/Frame 746.png044c980b-bbc0-424c-966c-53ef9fefaa5e.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\Frame 746.png044c980b-bbc0-424c-966c-53ef9fefaa5e.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\Frame 746.png6c1c660e-a3b3-4760-989d-1c26571c81ae.png))">
       <SourceType>Package</SourceType>
       <SourceId>Amado</SourceId>
@@ -16463,6 +16495,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\People applying product 1.pngc1403799-1f86-43c6-9734-d796f1c8b850.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\People applying product 13.png1a9534a6-beb9-4356-91de-73fed218a95e.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Amado</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Amado</BasePath>
+      <RelativePath>img/product-img/People applying product 13.png1a9534a6-beb9-4356-91de-73fed218a95e.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\People applying product 13.png1a9534a6-beb9-4356-91de-73fed218a95e.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\product-img\People applying product 13.png2b2fbba2-a077-4d10-8500-0710f9237890.png))">
       <SourceType>Package</SourceType>

@@ -1,6 +1,7 @@
 ﻿using Amado.Data;
 using Amado.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Amado.Areas.Admin.Controllers
 {
@@ -40,6 +41,7 @@ namespace Amado.Areas.Admin.Controllers
                 return View();
             }
             bool isDuplicated = _context.Category.Any(c => c.Name == newCategory.Name);
+
             if (isDuplicated)
             {
                 ModelState.AddModelError("", "You cannot duplicate value");

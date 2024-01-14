@@ -23,6 +23,8 @@ namespace Amado.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<CheckOut> CheckOuts { get; set; }
+        public DbSet<Subscribe> Subscribes { get; set; }
 
 
     }

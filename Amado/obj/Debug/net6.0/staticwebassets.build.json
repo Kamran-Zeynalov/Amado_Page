@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HTNbdUSbrWDSEnyzCtd3r8hheSS+c2vBLbVTVVRUWjQ=",
+  "Hash": "nm6iHriyyHPZDR3RdOp4nLk/f/oe0BoydItUqcufi/0=",
   "Source": "Amado",
   "BasePath": "_content/Amado",
   "Mode": "Default",
@@ -17391,6 +17391,23 @@
       "OriginalItemSpec": "wwwroot\\img\\product-img\\Banners (1).pngac1f401d-5caa-4dc4-a2c4-936b001f6f7b.png"
     },
     {
+      "Identity": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Banners (2).png48512bc9-aeba-487d-abd3-950d30b35ee6.png",
+      "SourceId": "Amado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\",
+      "BasePath": "_content/Amado",
+      "RelativePath": "img/product-img/Banners (2).png48512bc9-aeba-487d-abd3-950d30b35ee6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\product-img\\Banners (2).png48512bc9-aeba-487d-abd3-950d30b35ee6.png"
+    },
+    {
       "Identity": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Banners (2).png99ff6a09-97db-4223-bb6f-d0d2d8408340.png",
       "SourceId": "Amado",
       "SourceType": "Discovered",
@@ -17493,6 +17510,23 @@
       "OriginalItemSpec": "wwwroot\\img\\product-img\\Banners.pngb0105ea3-4b85-4d7d-969b-a59704c881a2.png"
     },
     {
+      "Identity": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Frame 746.png044c980b-bbc0-424c-966c-53ef9fefaa5e.png",
+      "SourceId": "Amado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\",
+      "BasePath": "_content/Amado",
+      "RelativePath": "img/product-img/Frame 746.png044c980b-bbc0-424c-966c-53ef9fefaa5e.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\product-img\\Frame 746.png044c980b-bbc0-424c-966c-53ef9fefaa5e.png"
+    },
+    {
       "Identity": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\Frame 746.png6c1c660e-a3b3-4760-989d-1c26571c81ae.png",
       "SourceId": "Amado",
       "SourceType": "Discovered",
@@ -17525,6 +17559,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\product-img\\People applying product 1.pngc1403799-1f86-43c6-9734-d796f1c8b850.png"
+    },
+    {
+      "Identity": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\People applying product 13.png1a9534a6-beb9-4356-91de-73fed218a95e.png",
+      "SourceId": "Amado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\",
+      "BasePath": "_content/Amado",
+      "RelativePath": "img/product-img/People applying product 13.png1a9534a6-beb9-4356-91de-73fed218a95e.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\product-img\\People applying product 13.png1a9534a6-beb9-4356-91de-73fed218a95e.png"
     },
     {
       "Identity": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\img\\product-img\\People applying product 13.png2b2fbba2-a077-4d10-8500-0710f9237890.png",
