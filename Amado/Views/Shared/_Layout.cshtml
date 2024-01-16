@@ -1,4 +1,5 @@
-﻿
+﻿@using Amado.Helpers;
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +17,7 @@
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="~/css/core-style.css"> 
-    <link rel="stylesheet" href="~/style.css">
+    @* <link rel="stylesheet" href="~/style.css"> *@
 
 </head>
 
@@ -64,10 +65,10 @@
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="Shop" asp-action="Index">Shop</a></li>
-                    <li><a asp-controller="Cart" asp-action="Index">Cart</a></li>
-                    <li><a asp-controller="CheckOut" asp-action="Index">Checkout</a></li>
+                    <li class="@PagesHelper.IsPageActive(ViewBag.ActivePage, "Home")"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="@PagesHelper.IsPageActive(ViewBag.ActivePage, "Shop")"><a asp-controller="Shop" asp-action="Index">Shop</a></li>
+                    <li class="@PagesHelper.IsPageActive(ViewBag.ActivePage, "Basket")"><a asp-controller="Cart" asp-action="Index">Cart</a></li>
+                    <li class="@PagesHelper.IsPageActive(ViewBag.ActivePage, "Checkout")"><a asp-controller="CheckOut" asp-action="Index">Checkout</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
@@ -77,8 +78,6 @@
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a href="cart.html" class="cart-nav"><img src="~/img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
-                <a href="#" class="fav-nav"><img src="~/img/core-img/favorites.png" alt=""> Favourite</a>
                 <a href="#" class="search-nav"><img src="~/img/core-img/search.png" alt=""> Search</a>
             </div>
             <!-- Social Button -->

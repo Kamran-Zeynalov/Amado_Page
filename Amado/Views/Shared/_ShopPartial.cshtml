@@ -7,9 +7,9 @@
         <div class="single-product-wrapper">
             <!-- Product Image -->
             <div class="product-img">
-                <img src="img/product-img/@product.ProductImages?.FirstOrDefault()?.Image.Url" alt="">
+                <img  src="img/product-img/@product.ProductImages?.FirstOrDefault()?.Image.Url" alt="">
                 <!-- Hover Thumb -->
-                <img style="height:60px;" class="hover-img" src="img/product-img/@product.ProductImages?.FirstOrDefault(p =>p.Order==1)?.Image.Id" alt="">
+                <img class="hover-img" src="img/product-img/@product.ProductImages?.LastOrDefault()?.Image.Url" alt="">
             </div>
 
             <!-- Product Description -->

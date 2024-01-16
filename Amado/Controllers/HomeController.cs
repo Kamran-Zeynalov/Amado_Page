@@ -19,6 +19,8 @@ namespace Amado.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.ActivePage = "Home";
+
             List<Product> products = _context.Products.Include(p => p.ProductImages).ThenInclude(pi => pi.Image).Take(10).ToList();
 
             IndexVM model = new()

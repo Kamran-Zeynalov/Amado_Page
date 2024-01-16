@@ -16,6 +16,8 @@ namespace Amado.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.ActivePage = "CheckOut";
+
             CheckOut check = _context.CheckOuts.FirstOrDefault();
             List<Country> countries = _context.Countries.AsNoTracking().ToList();
             check = new()
@@ -47,8 +49,8 @@ namespace Amado.Controllers
 
             if (isDuplicated)
             {
-                ModelState.AddModelError("", "You cannot duplicate value");
-                return View();
+                ViewBag.Error = "You cannot duplicate value";
+                return RedirectToAction("Index", "CheckOut");
             }
 
             newCheck.Countries = countries;

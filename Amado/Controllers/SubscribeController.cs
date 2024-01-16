@@ -35,7 +35,7 @@ namespace Amado.Controllers
             if (isDuplicated)
             {
                 TempData["Subscribe"] = false;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Subscribe");
             }
             var subscribeEntity = new Subscribe
             {

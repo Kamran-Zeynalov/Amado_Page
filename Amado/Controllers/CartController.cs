@@ -17,6 +17,8 @@ namespace Amado.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.ActivePage = "Cart";
+
             Request.Cookies.TryGetValue("basket", out var basketSerialized);
 
             Basket basket = null!;
