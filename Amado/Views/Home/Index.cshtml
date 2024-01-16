@@ -2,7 +2,17 @@
 @{
     ViewBag.Page = "Home Page";
 }
-
+@if (TempData["Subscribe"] != null)
+{
+    if ((bool)TempData["Subscribe"] == false)
+    {
+        <input type="hidden" id="Success" />
+    }
+    else
+    {
+        <input type="hidden" id="Error" />
+    }
+}
 <!-- Product Catagories Area Start -->
 <div class="products-catagories-area clearfix">
     <div class="amado-pro-catagory clearfix">
@@ -24,4 +34,7 @@
         }
     </div>
 </div>
+@section Script{
+<script src="~/js/Toastr.js"></script>
+}
 <!-- Product Catagories Area End -->

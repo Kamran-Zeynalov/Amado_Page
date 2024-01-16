@@ -1,11 +1,4 @@
-﻿@* @inject Elegant_Lady.Services.LayoutService layoutService *@
-@* @{
-    User user = await layoutService.GetUserFullName();
-    List<Order> orders = layoutService.GetOrderItems();
-
-} *@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -99,7 +92,7 @@
                             <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Category" asp-action="Index"><i class="icon-arrow-right"></i> Categories</a></li>
                             <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Brand" asp-action="Index"><i class="icon-arrow-right"></i> Brands</a></li>
                             <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Color" asp-action="Index"><i class="icon-arrow-right"></i> Colors</a></li>
-                          
+                            <li><a class="waves-effect waves-dark" asp-area="Admin" asp-controller="Subscribe" asp-action="Index"><i class="icon-arrow-right"></i> Subscribes</a></li>
                         </ul>
                     </li>
                     <li class="nav-level"></li>

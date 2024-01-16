@@ -4221,6 +4221,10 @@
       "PackagePath": "staticwebassets\\js\\Search.js"
     },
     {
+      "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\js\\Toastr.js",
+      "PackagePath": "staticwebassets\\js\\Toastr.js"
+    },
+    {
       "Id": "C:\\Users\\kzeyn\\source\\repos\\Amado\\Amado\\wwwroot\\js\\active.js",
       "PackagePath": "staticwebassets\\js\\active.js"
     },

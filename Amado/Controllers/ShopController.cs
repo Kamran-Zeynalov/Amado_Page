@@ -17,11 +17,13 @@ namespace Amado.Controllers
         {
             _context = context;
         }
+
         public async Task<IActionResult> Index(int page, string order = "desc")
         {
             if (page <= 0) page = 1;
 
             int productsPerPage = 3;
+
             var productCount = await _context.Products.CountAsync();
 
             int totalPageCount = (int)Math.Ceiling(((decimal)productCount / productsPerPage));
@@ -56,6 +58,34 @@ namespace Amado.Controllers
 
             return View(model);
         }
+        public IActionResult Filter(int page, string order = "desc")
+        {
+            if (page <= 0) page = 1;
+
+            int productsPerPage = 6;
+            var productCount = _context.Products.Count();
+
+            int totalPageCount = (int)Math.Ceiling(((decimal)productCount / productsPerPage));
+
+            var products = order switch
+            {
+                "desc" => _context.Products.OrderByDescending(x => x.Id),
+                "asc" => _context.Products.OrderBy(x => x.Id),
+                _ => _context.Products.OrderByDescending(x => x.Id)
+            };
+
+            var model = new IndexVM
+            {
+                Products = products
+                .Skip((page - 1) * productsPerPage)
+                .Take(productsPerPage).Include(p => p.ProductImages).ThenInclude(pi => pi.Image)
+                .ToList(),
+                TotalPageCount = totalPageCount,
+                CurrentPage = page,
+            };
+
+            return PartialView("_ShopPartial", model);
+        }
 
         public IActionResult Detail(int? id)
         {
@@ -74,7 +104,6 @@ namespace Amado.Controllers
 
             return View(model);
         }
-
 
         public IActionResult AddToBasket(int? id)
         {
@@ -139,6 +168,7 @@ namespace Amado.Controllers
 
             return RedirectToAction("Index", "Cart");
         }
+
         public IActionResult Search(string? input)
         {
             var products = input == null ? new List<Product>()
@@ -149,34 +179,6 @@ namespace Amado.Controllers
             return ViewComponent("SearchResult", products);
         }
 
-        public IActionResult Filter(int page, string order = "desc")
-        {
-            if (page <= 0) page = 1;
-
-            int productsPerPage = 3;
-            var productCount = _context.Products.Count();
-
-            int totalPageCount = (int)Math.Ceiling(((decimal)productCount / productsPerPage));
-
-            var products = order switch
-            {
-                "desc" => _context.Products.OrderByDescending(x => x.Id),
-                "asc" => _context.Products.OrderBy(x => x.Id),
-                _ => _context.Products.OrderByDescending(x => x.Id)
-            };
-
-            var model = new IndexVM
-            {
-                Products = products
-                .Skip((page - 1) * productsPerPage)
-                .Take(productsPerPage)
-                .ToList(),
-                TotalPageCount = totalPageCount,
-                CurrentPage = page
-            };
-
-            return PartialView("_ShopPartial", model);
-        }
 
         public IActionResult Sorted(int titleid, int brandid, int colorid, int page = 1)
         {

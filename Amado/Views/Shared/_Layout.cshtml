@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -104,12 +105,12 @@
                         <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.</p>
                     </div>
                 </div>
-                <!-- Newsletter Form -->
                 <div class="col-12 col-lg-6 col-xl-5">
                     <div class="newsletter-form mb-100">
-                        <form action="#" method="post">
-                            <input type="email" name="email" class="nl-email" placeholder="Your E-mail">
+                        <form asp-controller="Subscribe" asp-action="Subscribe" method="post">
+                            <input value="@ViewBag.Subscribe" type="email" name="email" class="nl-email" placeholder="Your E-mail">
                             <input type="submit" value="Subscribe">
+                            <span>@ViewData["SubscribeError"]</span>
                         </form>
                     </div>
                 </div>
@@ -169,18 +170,13 @@
             </div>
         </div>
     </footer>
-    <!-- ##### Footer Area End ##### -->
-    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
-    <script src="js/Search.js"></script>
+
+    <script src="~/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/active.js"></script>
+    <script src="~/js/Search.js"></script>
     @RenderSection("Script",false)
 
 </body>
